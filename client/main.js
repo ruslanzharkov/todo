@@ -1,13 +1,18 @@
 /**
- * Created by loki on 23.07.17.
+ * Created by loki on 1.08.17.
  */
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App.jsx';
+ import React from 'react'
+ import { render } from 'react-dom'
+ import { Provider } from 'react-redux'
+ import { createStore } from 'redux'
+ import todoApp from './reducers'
+ import App from './components/App'
 
-ReactDOM.render(
-    <App/>,
+ let store = createStore(todoApp)
+
+render(
+   <Provider store={store}>
+     <App />
+   </Provider>,
     document.getElementById('mount-point')
 );
-
-
