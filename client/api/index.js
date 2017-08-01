@@ -3,7 +3,7 @@ import { apiPrefix } from '../../etc/config.json';
 
 export default {
     listTodos() {
-        return axios.get(`${apiPrefix}/todos`)
+        return axios.get(`${apiPrefix}/todos`);
     },
 
     createTodo(data) {
