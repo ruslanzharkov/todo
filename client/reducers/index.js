@@ -1,10 +1,25 @@
 import { combineReducers } from 'redux'
-import todos from './todos'
-import visibilityFilter from './visibilityFilter'
+import * as types from '../actions/index'
+
+
+
+const todoReducer = (state = [], action) => {
+	switch(action.type) {
+		case 'CREATE_TODO_SUCCESS':
+			return  [
+				...state,
+				Object.assign({} , action.todo)
+			]
+		case 'FETCH_TODO_SUCCESS':
+			return action.todos
+		default:
+			return state
+	}
+}
+
 
 const todoApp = combineReducers({
-  todos,
-  visibilityFilter
+  todos: todoReducer
 })
 
 export default todoApp
