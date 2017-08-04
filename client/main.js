@@ -8,6 +8,7 @@ import App from './components/App'
 import * as actions from './actions/index'
 import configureStore from './store/configureStore'
 
+
 const store = configureStore();
 store.dispatch(actions.fetchTodos());
 

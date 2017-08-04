@@ -5,6 +5,7 @@ import * as actions from '../actions/index'
 import Form from './AddForm'
 import '../../node_modules/bootstrap/dist/css/bootstrap-theme.min.css'
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import './TodoList.css'
 
 class TodoList extends Component {
     constructor(props) {
@@ -24,7 +25,7 @@ class TodoList extends Component {
             <div className="col-md-4">
                 <ul className="list-group">
                     {this.props.todos.map(todo => (
-                        <li key={todo._id} className="list-group-item-info">
+                        <li key={todo._id} className="list-group-item-info todo">
                             {`${todo.text}`}
                         </li>
                     ))}
