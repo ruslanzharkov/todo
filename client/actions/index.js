@@ -8,8 +8,22 @@ export const fetchTodosSuccess = todos => ({
 })
 
 export const createTodoSuccess = (todo) => {
+    return {
+        type: types.CREATE_TODO_SUCCESS,
+        todo
+    }
+}
+
+export const updateTodoSuccess = (todo) => {
   return {
-    type: types.CREATE_TODO_SUCCESS,
+    type: types.UPDATE_TODO_SUCCESS,
+    todo
+  }
+}
+
+export const deleteTodoSuccess = (todo) => {
+  return {
+    type: types.DELETE_DATA_SUCCESS,
     todo
   }
 }
@@ -36,4 +50,25 @@ export const createTodo = (todo) => {
           throw(err)
       })
   }
+}
+
+export const updateTodo = (todo) => {
+  return (dispatch) => {
+    return axios.put(`${apiPrefix}/todos/${todo._id}`, todo)
+      .then(response => {
+        dispatch(updateTodoSuccess(response.data))
+      })
+  }
+}
+
+export const deleteTodo = (todoId) => {
+    return (dispatch) => {
+        return axios.delete(`${apiPrefix}/todos/${todoId}`)
+            .then(response => {
+                dispatch(deleteTodoSuccess(response.data))
+            })
+            .catch(err => {
+                throw(err)
+            })
+    }
 }

@@ -9,14 +9,20 @@ import './TodoList.css'
 
 class TodoList extends Component {
     constructor(props) {
-        super(props)
+        super(props);
     }
 
     createTodo(note) {
         this.props.createTodo(note);
     }
 
+    deleteTodo(noteId) {
+        this.props.deleteTodo(noteId);
+    }
+
     render() {
+        // this.props;
+        // debugger;
         return (
     <div className="container">
         <Form submitTodo={this.createTodo.bind(this)}/>
@@ -25,8 +31,9 @@ class TodoList extends Component {
             <div className="col-md-4">
                 <ul className="list-group">
                     {this.props.todos.map(todo => (
-                        <li key={todo._id} className="list-group-item-info todo">
+                        <li key={todo._id} className="list-group-item-info todo" id={todo._id}>
                             {`${todo.text}`}
+                            <button className="btn btn-danger icon" onClick={this.deleteTodo.bind(this, todo._id)}>&#10007;</button>
                         </li>
                     ))}
                 </ul>
@@ -46,7 +53,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        createTodo: todo => dispatch(actions.createTodo(todo))
+        createTodo: todo => dispatch(actions.createTodo(todo)),
+        deleteTodo: todo => dispatch(actions.deleteTodo(todo))
     }
 };
 
