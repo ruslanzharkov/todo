@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
-
+// import mongoose from "mongoose";
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const TodoSchema = new Schema({
@@ -7,4 +7,5 @@ const TodoSchema = new Schema({
     completed   : { type: Boolean }
 });
 
-mongoose.model('Todo', TodoSchema);
+const Todo = mongoose.model('Todo', TodoSchema);
+module.exports = Todo;

@@ -1,33 +1,38 @@
-import mongoose from "mongoose";
+// import mongoose from "mongoose";
+//
+// import config from '../../etc/config.json';
+//
+// import '../models/Todo';
+const Todo = require('../models/Todo');
 
-import config from '../../etc/config.json';
 
-import '../models/Todo';
 
-const Todo = mongoose.model('Todo');
+class DataBaseUtils {
 
-export function setUpConnection() {
-    mongoose.connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`);
+    listTodo(req, res) {
+        return Todo.find()
+            .then((todos) => res.send(todos));
+    }
+
+    createTodo(data) {
+        const todo = new Todo({
+            text: data.text,
+            completed: false
+        });
+
+        return todo.save();
+    }
+
+
+    updateTodo(req, res) {
+        return Todo.findByIdAndUpdate({_id: req.params.id}, req.body, {new: true})
+            .then((todos) => res.send(todos));
+    }
+
+
+    deleteTodo(id) {
+        return Todo.findById(id).remove();
+    }
 }
 
-export function listTodo() {
-    return Todo.find();
-}
-
-export function createTodo(data) {
-    const todo = new Todo({
-        text: data.text,
-        completed: false
-    });
-
-    return todo.save();
-}
-
-export function updateTodo(id, data) {
-    return Todo.findByIdAndUpdate({_id: id}, data);
-}
-
-export function deleteTodo(id) {
-    return Todo.findById(id).remove();
-}
-
+module.exports = new DataBaseUtils();
