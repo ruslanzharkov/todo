@@ -4,7 +4,7 @@
   "description": "ToDO application",
   "main": "webpack.config.js",
   "scripts": {
-    "server": "babel-node --presets es2015 server/app.js",
+    "server": "node server/app.js",
     "webpack-devserver": "webpack-dev-server --debug --hot --devtool eval-source-map --output-pathinfo --watch --colors --inline --content-base public --port 8090 --host 0.0.0.0"
   },
   "author": {
