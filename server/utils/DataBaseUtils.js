@@ -1,11 +1,4 @@
-// import mongoose from "mongoose";
-//
-// import config from '../../etc/config.json';
-//
-// import '../models/Todo';
 const Todo = require('../models/Todo');
-
-
 
 class DataBaseUtils {
 
