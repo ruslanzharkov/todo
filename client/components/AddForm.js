@@ -18,16 +18,16 @@ const AddForm = (props) => {
               e.target.reset();
             }}>
 
-              <h1 className="todo-title">Add your todo</h1>
+              <h1 className="todo-title">ToDo application</h1>
               <label htmlFor="">
               <input type="text" name="text" className="form-control"
                      ref={node => textInput  = node} placeholder="Write down some todo"/></label>
-            <button type="submit" className="btn btn-warning padd">submit</button>
+            <button type="submit" className="btn padd">New todo</button>
           </form>
         </div>
         <div className="col-md-4"></div>
       </div>
   )
-}
+};
 
 export default AddForm

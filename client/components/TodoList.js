@@ -37,7 +37,7 @@ class TodoList extends Component {
         });
     }
 
-    hideModal(){
+    hideModal() {
         this.setState({
             isOpen: false
         });
@@ -48,8 +48,6 @@ class TodoList extends Component {
             todoId: todo._id,
             todoText: todo.text
         })
-        // this.state.todoId = todo._id;
-        // this.state.todoText = todo.text;
         this.openModal();
     }
 
@@ -89,8 +87,6 @@ class TodoList extends Component {
     }
 
     render() {
-        // this.props;
-        // debugger;
         return (
         <div className="container">
             <Form submitTodo={this.createTodo.bind(this)}/>
