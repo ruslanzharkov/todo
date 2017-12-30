@@ -1,11 +1,3 @@
-// import express from 'express';
-//
-// import bodyParser from 'body-parser';
-// import cors from 'cors';
-// import { serverPort } from '../etc/config.json';
-//
-// import * as db from './utils/DataBaseUtils';
-
 const mongoose = require('mongoose');
 const express = require('express');
 const bodyParser = require('body-parser');
