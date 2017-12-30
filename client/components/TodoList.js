@@ -24,7 +24,7 @@ class TodoList extends Component {
             todoId: '',
             todoText: '',
             todoCompleted: false
-        }
+        };
         this.openModal = this.openModal.bind(this);
         this.hideModal = this.hideModal.bind(this);
         this.textChange = this.textChange.bind(this);
@@ -47,7 +47,7 @@ class TodoList extends Component {
         this.setState({
             todoId: todo._id,
             todoText: todo.text
-        })
+        });
         this.openModal();
     }
 
