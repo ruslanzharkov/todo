@@ -118,7 +118,7 @@ class TodoList extends Component {
                 <div className="col-md-4">
                     <ul className="list-group">
                         {this.props.todos.map(todo => (
-                            <li key={todo._id} className="list-group-item-info todo" id={todo._id}
+                            <li key={todo._id} className="todo" id={todo._id}
                                 style={{
                                     textDecoration: todo.completed ? 'line-through' : 'none'
                                 }}>

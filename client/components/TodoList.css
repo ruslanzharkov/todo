@@ -1,6 +1,7 @@
 .todo {
 	text-align: center;
 	font-size: 17px;
+	border: 0.5px solid lightgray;
 }
 .icon-check {
 	margin-left: 8px;
