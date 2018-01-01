@@ -3,3 +3,4 @@ node_modules/
 script
 npm-debug.log
 *.log
+package-lock.json
