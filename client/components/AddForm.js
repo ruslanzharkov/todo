@@ -2,6 +2,7 @@ import React from 'react'
 import '../../node_modules/bootstrap/dist/css/bootstrap-theme.min.css'
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './AddForm.css'
+import Button from './Button';
 
 const AddForm = (props) => {
   let textInput = '';
@@ -22,7 +23,7 @@ const AddForm = (props) => {
               <label htmlFor="">
               <input type="text" name="text" className="form-control"
                      ref={node => textInput  = node} placeholder="Write down some todo"/></label>
-            <button type="submit" className="btn padd">New todo</button>
+              <Button/>
           </form>
         </div>
         <div className="col-md-4"></div>
