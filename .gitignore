@@ -4,3 +4,6 @@ script
 npm-debug.log
 *.log
 package-lock.json
+/test/e2e/node_modules/*
+/test/e2e/reports/*
+coverage/*
