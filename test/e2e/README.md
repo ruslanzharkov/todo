@@ -1,19 +1,6 @@
-# Testing @ Syncano
+# Testing with 2e2
 
-### End to End testing of React applications with Nightwatch part I
-
-#### Why we joined the dark side
-In the mid of 2015 our front-end team took the challenge of rebuilding the entire Dashboard from scratch. In a matter of three months we built a new version using the React library. Since it was hard to keep up with writing unit tests at such demanding pace we decided that end-to-end (e2e) will be our go-to test strategy.
-
-The most obvious choice for e2e tests is Selenium but there are many language bindings and frameworks to choose from. Eventually we settled on Nightwatch.js for a number of reasons:
-
-* It has built-in support for Page Object Pattern methodology
-* It’s written in Node.js so it nicely integrates with the front-end stack
-* It has built-in test runner. You can run your tests in parallel, sequentially, with different environments etc.
-* It was easy to integrate with CircleCI which we currently use as our continuous integration tool
-* It’s handling taking screenshots on errors and failures
-
-In this post I’ll show you how to setup a simple Nightwatch project with using the Page Object Pattern. The finished code for this tutorial is on [Github](https://github.com/Syncano/syncano-testing-examples) so you can grab the fully working example from there or follow the tutorial steps to make it from scratch.
+### End to End testing of React applications with Nightwatch 
 
 #### Installation
 First thing you need to do is to install Node.js if you don’t yet have it. You can find the installation instructions on the Node.js project page. Once you have node installed, you can take advantage of it’s package manager called `npm`.
@@ -97,43 +84,14 @@ Nightwatch relies on `nightwatch.json` as the configuration file for the test ru
 
 I'll go through the important parts of the `nightwatch.json` file:
 
-* `src_folders` - an array that contains the folders that your tests reside in
-* `output_folder` - folder where the test artifacts (XML reports, selenium log and screenshots) are being stored
-* `page_objects_path` - a folder where your Page Objects will be defined
-* `globals_path` - path to a file which stores global variables
-* `selenium` - selenium specific settings. In our case it's important to have the `start_process` set to `true` so that selenium server starts automatically. Also the `server_path` and `webdriver.chrome.driver` paths should have proper folder specified.
+* `src_folders` - An array of folders (excluding subfolders) where the tests are located.
+* `output_folder` - The location where the JUnit XML report files will be saved.
+* `page_objects_path` - Location(s) where page object files will be loaded from.
+* `globals_path` - Location of an external globals module which will be loaded and made available to the test as a property globals on the main client instance. 
+* `selenium` - An object containing Selenium Server related configuration options. See below for details.
 
-`test_settings` is an object where you specify the test environments. The important bit in the `default` environment is the `desiredCapabilities` object where we specify the `chrome` as the `browserName` so that Nightwatch will run the test against it.
 
-#### Adding ECMAScript 6 to nightwatch
-
-We are writing the Syncano Dashboard according to the ECMAScript 6 specs and we wanted to do the same for Nightwatch. In order to be able to do that, you'll have to add a `nightwatch.conf.js` file to the root of your project. The file should contain these couple of lines:
-
-```javascript
-require('babel-core/register');
-
-module.exports = require('./nightwatch.json');
-```
-Bang! You can now write your tests in ECMAS 6
-
-> Edit: things have changed since I've written this article. Now you'll need to
-> add es2015 preset in .babelrc config file and add `add-module-exports` plugin
-> and do `npm i babel-plugin-add-module-exports babel-preset-es2015 --save-dev`.
-> Everything should work after that. See the syncano-testing-examples repo for
-> details
-
-#### The Tests
-
-Before we get to the test code there are only two things left to do:
-
-* Go to [Syncano Dashboard]("https://dashboard.syncano.io/#/signup") and sign up to our service (if you suspect that this article is an elaborate plot to make you sign up, then you are right)
-* Go to your terminal and paste these two lines (where "your_email" and "your_password" will be the credentials that you just used when signing up):
-	* `export EMAIL="your_email"`
-	* `export PASSWORD="your_password"`
-
-(If you are on a windows machine than the command will be `SET` instead of `export`)
-
-##### Test if a user can log in to the application
+##### Test sample for creating todo note
 In the root of your project create a `tests` directory. Create a testLogin.js file and paste there this code:
 
 ```javascript
