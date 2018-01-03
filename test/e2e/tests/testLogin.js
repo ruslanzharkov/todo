@@ -1,11 +1,11 @@
 export default {
   'Create todo' : (client) => {
-    const loginPage = client.page.loginPage();
+    const mainPage = client.page.mainPage();
     const instancesPage = client.page.instancesPage();
 
-    loginPage
+    mainPage
       .navigate()
-      .login('This is acceptance test');
+      .create('This is acceptance test');
 
     instancesPage.expect.element('@instancesListDescription').to.be.visible;
 

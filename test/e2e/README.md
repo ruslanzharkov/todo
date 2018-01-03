@@ -163,7 +163,7 @@ This is a test that is checking if a user is able to log in to the application. 
 The way to achieve this sort of clarity within a test, where the business logic is presented clearly and test can be easily understood even by non tech-saavy people is by introducing the Page Object pattern. `loginPage` and `instancesPage` objects contain all the methods and ui elements that are needed to make interactions within that page.
 
 ##### Log in Page Object
-Page Objects files should be created in a `pages` folder. Create one in the root of your project. Next, create a `loginPage.js` file that will contain this code:
+Page Objects files should be created in a `pages` folder. Create one in the root of your project. Next, create a `mainPage.js` file that will contain this code:
 
 ```javascript
 const loginCommands = {
@@ -223,9 +223,9 @@ export default {
 };
 ```
 
-It's a lot simpler than the loginPage file since it only has a single `instancesListDescription` element. What is interesting about this element is that it's not a CSS selector as the elements in the loginPage.js file but an XPath selector. You can use XPath selectors by adding a `locateStrategy: xpath` property to the desired element.
+It's a lot simpler than the loginPage file since it only has a single `instancesListDescription` element. What is interesting about this element is that it's not a CSS selector as the elements in the mainPage.js file but an XPath selector. You can use XPath selectors by adding a `locateStrategy: xpath` property to the desired element.
 
-The `instancesListDescription` element is used in the 11 line of the loginPage.js file to assert if a login was successful.
+The `instancesListDescription` element is used in the 11 line of the mainPage.js file to assert if a login was successful.
 
 ```javascript
     instancesPage.expect.element('@instancesListDescription').to.be.visible;

@@ -1,5 +1,5 @@
-const loginCommands = {
-  login(todoText) {
+const createCommands = {
+  create(todoText) {
     return this
       .waitForElementVisible('@todoInput')
       .setValue('@todoInput', todoText)
@@ -10,7 +10,7 @@ const loginCommands = {
 
 export default {
   url: 'http://localhost:8090/',
-  commands: [loginCommands],
+  commands: [createCommands],
   elements: {
     todoInput: {
       selector: 'input[type=text]'
