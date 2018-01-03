@@ -8,6 +8,5 @@ export default {
             selector: '//li[text()=\'This is acceptance test with changes\']',
             locateStrategy: 'xpath'
         },
-
     }
 };
