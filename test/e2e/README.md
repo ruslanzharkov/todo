@@ -49,4 +49,4 @@ That's it! The only thing left to do is to run the test. In the terminal, go to 
 
 > Rembember to use npm run e2e-setup before starting tests. You only need to do it once.
 
-`npm test`
+Then run `npm test` and enjoy it
