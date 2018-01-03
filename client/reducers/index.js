@@ -14,7 +14,6 @@ const todoReducer = (state = [], action) => {
 			];
         case 'UPDATE_TODO_SUCCESS':
             action;
-            debugger;
             return [
                 ...state.map(todo => {
                     if(todo._id === action.todo._id) {

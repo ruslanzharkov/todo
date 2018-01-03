@@ -1,15 +1,15 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json'
+import renderer from 'react-test-renderer';
 import Button from '../../client/components/Button';
 
 describe('Button', () => {
     it('Renders button to user', () => {
 
-        const button = shallow(
+        const button = renderer.create(
             <Button/>
         );
 
-        expect(shallowToJson(button)).toMatchSnapshot();
+        const json = button.toJSON();
+        expect(json).toMatchSnapshot();
     });
 });

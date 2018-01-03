@@ -1,6 +1,3 @@
-/**
- * Created by loki on 1.08.17.
- */
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
@@ -18,7 +15,7 @@ ReactDOM.render (
     </Provider>
     ,
     document.getElementById('mount-point')
-)
+);
 
 
 
