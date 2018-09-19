@@ -16,7 +16,7 @@
     "axios": "^0.9.1",
     "babel-cli": "^6.5.1",
     "body-parser": "^1.12.3",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^4.1.2",
     "chai": "^4.1.2",
     "classnames": "^2.2.3",
     "cors": "*",
