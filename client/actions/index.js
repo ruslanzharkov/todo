@@ -95,4 +95,3 @@ export const checkTodo = (todo) => {
             })
     }
 };
-
