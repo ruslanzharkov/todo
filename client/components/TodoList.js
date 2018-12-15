@@ -121,10 +121,14 @@ class TodoList extends Component {
                                 style={{
                                     textDecoration: todo.completed ? 'line-through' : 'none'
                                 }}>
+                                    <div>
                                     {todo.text}
-                                <span className="icon-check" onClick={this.checkTodo.bind(this, todo)}>&#10003;</span>
-                                <span className="icon-update" onClick={this.getTodo.bind(this, todo)}>&#10000;</span>
-                                <span className="icon-delete" onClick={this.deleteTodo.bind(this, todo._id)}>&#10007;</span>
+                                    </div>
+                                <div>
+                                    <span className="icon-check" onClick={this.checkTodo.bind(this, todo)}>&#10003;</span>
+                                    <span className="icon-update" onClick={this.getTodo.bind(this, todo)}>&#10000;</span>
+                                    <span className="icon-delete" onClick={this.deleteTodo.bind(this, todo._id)}>&#10007;</span>
+                                </div>
                             </li>
                         ))}
                     </ul>
