@@ -3,8 +3,7 @@ import { connect } from 'react-redux'
 import { apiPrefix } from '../../etc/config.json'
 import * as actions from '../actions/index'
 import Form from './AddForm'
-import '../../node_modules/bootstrap/dist/css/bootstrap-theme.min.css'
-import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
+
 import './TodoList.css'
 import {
     Modal,

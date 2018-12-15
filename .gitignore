@@ -8,3 +8,4 @@ package-lock.json
 /test/e2e/reports/*
 coverage/*
 test/__tests__/__snapshots__
+yarn.lock
