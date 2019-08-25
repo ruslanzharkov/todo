@@ -13,7 +13,7 @@
     "email": "zharkov.ruslan.e@gmail.com"
   },
   "dependencies": {
-    "axios": "^0.9.1",
+    "axios": "^0.19.0",
     "babel-cli": "^6.5.1",
     "body-parser": "^1.12.3",
     "bootstrap": "^4.1.2",
